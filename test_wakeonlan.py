@@ -67,7 +67,7 @@ def draw_lcd():
     #except BaseException:
     #    output_LCD("送信エラー")
 
-# wisun_set_m.txtの存在/中身チェック関数
+# wakeonlan_set_m.txtの存在/中身チェック関数
 def wisun_set_filechk():
     global MAC_ADRS
     global WIFI
@@ -75,12 +75,12 @@ def wisun_set_filechk():
 
     scanfile_flg = False
     for file_name in uos.listdir('/flash') :
-        if file_name == 'wisun_set_m.txt' :
+        if file_name == 'wakeonlan_set_m.txt' :
             scanfile_flg = True
 
     if scanfile_flg :
-        print('>> found [wisun_set_m.txt] !')
-        with open('/flash/wisun_set_m.txt' , 'r') as f :
+        print('>> found [wakeonlan_set_m.txt] !')
+        with open('/flash/wakeonlan_set_m.txt' , 'r') as f :
             for file_line in f :
                 filetxt = file_line.strip().split(':')
                 if filetxt[0] == 'MACADRS' :
@@ -96,11 +96,11 @@ def wisun_set_filechk():
         if len(MAC_ADRS) == 17: # NGならプログラム停止
             scanfile_flg = True
         else :
-            print('>> [wisun_set_m.txt] Illegal!!')
+            print('>> [wakeonlan_set_m.txt] Illegal!!')
             scanfile_flg = False
             
     else :
-        print('>> no [wisun_set_m.txt] !')
+        print('>> no [wakeonlan_set_m.txt] !')
     return scanfile_flg
 
 def output_LCD(text):
@@ -152,10 +152,10 @@ try :                                               # ネットワーク不通�
     utime.sleep(2)
 
 
-    # 基本設定ファイル[wisun_set_m.txt]のチェック 無い場合は例外エラー吐いて終了する
+    # 基本設定ファイル[wakeonlan_set_m.txt]のチェック 無い場合は例外エラー吐いて終了する
     if not wisun_set_filechk() :
-        lcd.print('err!! Check [wisun_set_m.txt] and restart!!', 0, 0, lcd.WHITE)
-        raise ValueError('err!! Check [wisun_set_m.txt] and restart!!')
+        lcd.print('err!! Check [wakeonlan_set_m.txt] and restart!!', 0, 0, lcd.WHITE)
+        raise ValueError('err!! Check [wakeonlan_set_m.txt] and restart!!')
 
     output_LCD('Wifi start!!')
     utime.sleep(1)
