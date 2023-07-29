@@ -3,7 +3,7 @@ m5stickcでWake On Lanを行いPCを起動させる
 
 # <概要>
 
-![WakeOnLan概要](https://github.com/tktomaru/m5stick_wakeonlan/doc/Slide.jpg)
+![WakeOnLan概要](doc/Slide.jpg)
 
 # <実行に必要なファイル>
 
