@@ -1,6 +1,10 @@
 # m5stick_wakeonlan
 m5stickcでWake On Lanを行いPCを起動させる
 
+# <概要>
+
+![WakeOnLan概要](https://github.com/tktomaru/m5stick_wakeonlan/doc/Slide.jpg)
+
 # <実行に必要なファイル>
 
 ## プログラム本体「test_wakeonlan.py」**※必須**
