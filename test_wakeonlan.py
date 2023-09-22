@@ -61,7 +61,7 @@ def draw_lcd():
     lcd.clear()
     
     #try:
-    # MAC_ADRS = "00:50:56:36:ED:D8"
+    # MAC_ADRS = "00:11:22:33:44:55"
     send_magic_packet(MAC_ADRS)
  
     #except BaseException:
